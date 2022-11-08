@@ -66,17 +66,15 @@ export const cadastrarPizza = async ({
 };
 
 export const cadastrarPedido = async ({
-  data,
-  hora,
+  dataHora,
   retiradaEntrega,
   valorTotal,
   cpf_cliente,
   id_pizza,
   id_produto,
 }) => {
-  novaConexao.query("insert into pizza values (?, ?, ?, ?, ?, ?, ?)", [
-    data,
-    hora,
+  novaConexao.query("insert into pizza values (null, ?, ?, ?, ?, ?, ?)", [
+    dataHora,
     retiradaEntrega,
     valorTotal,
     cpf_cliente,
