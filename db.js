@@ -56,7 +56,7 @@ export const cadastrarPizza = async ({
   sabor03,
   sabor04,
 }) => {
-  novaConexao.query("insert into pizza values (?, ?, ?, ?, ?)", [
+  novaConexao.query("insert into pizza values (null, ?, ?, ?, ?, ?)", [
     tamanho,
     sabor01,
     sabor02,

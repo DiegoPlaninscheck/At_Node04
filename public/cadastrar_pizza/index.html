@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
     <title>Cadastrar Pizza</title>
 </head>
+
 <body>
     <h1>Cadastrar Pizza</h1>
+    <form class="forms" action="/cadastrar_pizza" method="post">
+        <div class="inputLabels">
+            <div>
+                <label for="">Tamanho</label>
+            </div>
+            <input type="text" name="tamanho" id="tamanho" />
+        </div>
+        <div class="inputLabels">
+            <div>
+                <label for="">Sabor01</label>
+            </div>
+            <input type="text" name="sabor01" id="sabor01" />
+        </div>
+        <div class="inputLabels">
+            <div>
+                <label for="">Sabor02</label>
+            </div>
+            <input type="text" name="sabor02" id="sabor02" />
+        </div>
+        <div class="inputLabels">
+            <div>
+                <label for="">Sabor03</label>
+            </div>
+            <input type="text" name="sabor03" id="sabor03" />
+        </div>
+        <div class="inputLabels">
+            <div>
+                <label for="">Sabor04</label>
+            </div>
+            <input type="text" name="sabor04" id="sabor04" />
+        </div>
+        <div class="divBotao">
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
 </body>
+
 </html>
