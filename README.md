@@ -15,8 +15,7 @@ create table cliente(
 
 create table pedido (
     id int not null primary key auto_increment,
-    dataPedido date not null,
-    hora time not null, 
+    dataHora datetime not null,
     valorTotal double not null,
     retiradaEntrega enum("retirada", "entrega") not null,
     cpf_cliente char(15) not null,
