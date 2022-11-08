@@ -15,15 +15,14 @@ create table cliente(
 
 create table pedido (
     id int not null primary key auto_increment,
-    dataPedido date not null,
-    hora time not null, 
+    dataHora datetime not null,
     valorTotal double not null,
     retiradaEntrega enum("retirada", "entrega") not null,
     cpf_cliente char(15) not null,
     foreign key (cpf_cliente) references cliente(cpf),
     id_pizza int not null,
     foreign key (id_pizza) references pizza(id),
-    id_produto int not null,
+    id_produto int,
     foreign key (id_produto) references produto(id)
     on update cascade
     on delete cascade
