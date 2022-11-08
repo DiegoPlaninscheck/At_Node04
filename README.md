@@ -5,7 +5,7 @@
 create database node_04;
 
 create table cliente(
-    cpf char(15) not null primary key,
+    cpf char(14) not null primary key,
     nome varchar(50) not null,
     sobrenome varchar(50) not null,
     nascimento date not null,
@@ -39,7 +39,7 @@ create table pizza (
 );
 
 create table endereco (
-    cep char(15) not null primary key,
+    cep char(9) not null primary key,
     rua varchar(50) not null,
     numero int not null,
     complemento varchar(50) not null,
