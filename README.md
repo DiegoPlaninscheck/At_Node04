@@ -22,7 +22,7 @@ create table pedido (
     foreign key (cpf_cliente) references cliente(cpf),
     id_pizza int not null,
     foreign key (id_pizza) references pizza(id),
-    id_produto int not null,
+    id_produto int,
     foreign key (id_produto) references produto(id)
     on update cascade
     on delete cascade
