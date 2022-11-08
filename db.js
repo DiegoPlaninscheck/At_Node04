@@ -22,14 +22,6 @@ export const cadastrarCliente = async ({
   cidade,
   estado,
 }) => {
-  novaConexao.query("insert into cliente values (?, ?, ?, ?, ?)", [
-    cpf,
-    nome,
-    sobrenome,
-    nascimento,
-    cep,
-  ]);
-
   novaConexao.query("insert into endereco values (?, ?, ?, ?, ?, ?, ?)", [
     cep,
     rua,
@@ -37,7 +29,15 @@ export const cadastrarCliente = async ({
     complemento,
     bairro,
     cidade,
-    estado,
+    estado
+  ]);
+
+  novaConexao.query("insert into cliente values (?, ?, ?, ?, ?)", [
+    cpf,
+    nome,
+    sobrenome,
+    nascimento,
+    cep
   ]);
 };
 
@@ -45,7 +45,7 @@ export const cadastrarProduto = async ({ nome, tipo, quantidade }) => {
   novaConexao.query("insert into produto values (?, ?, ?)", [
     nome,
     tipo,
-    quantidade,
+    quantidade
   ]);
 };
 
@@ -61,7 +61,7 @@ export const cadastrarPizza = async ({
     sabor01,
     sabor02,
     sabor03,
-    sabor04,
+    sabor04
   ]);
 };
 
@@ -81,7 +81,7 @@ export const cadastrarPedido = async ({
     valorTotal,
     cpf_cliente,
     id_pizza,
-    id_produto,
+    id_produto
   ]);
 };
 

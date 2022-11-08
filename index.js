@@ -41,24 +41,24 @@ app.get("/mostrar_produto", (req, res) => {
   res.sendFile(__dirname + "public/mostrar_produto.html");
 });
 
-app.post("/cliente", async (req, res) => {
+app.post("/cadastrar_cliente", async (req, res) => {
   await db.cadastrarCliente(req.body);
-  res.redirect("/cliente");
+  res.redirect("/cadastrar_cliente");
 });
 
-app.post("/produto", async (req, res) => {
+app.post("/cadastrar_produto", async (req, res) => {
   await db.cadastrarProduto(req.body);
-  res.redirect("/produto");
+  res.redirect("/cadastrar_produto");
 });
 
-app.post("/pizza", async (req, res) => {
+app.post("/cadastrar_pizza", async (req, res) => {
   await db.cadastrarPizza(req.body);
-  res.redirect("/pizza");
+  res.redirect("/cadastrar_pizza");
 });
 
-app.post("/pedido", async (req, res) => {
+app.post("/cadastrar_pedido", async (req, res) => {
   await db.cadastrarPedido(req.body);
-  res.redirect("/pedido");
+  res.redirect("/cadastrar_pedido");
 });
 
 app.listen(port, () =>
