@@ -42,7 +42,7 @@ export const cadastrarCliente = async ({
 };
 
 export const cadastrarProduto = async ({ nome, tipo, quantidade }) => {
-  novaConexao.query("insert into produto values (?, ?, ?)", [
+  novaConexao.query("insert into produto values (null, ?, ?, ?)", [
     nome,
     tipo,
     quantidade
