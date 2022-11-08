@@ -5,7 +5,7 @@
 create database node_04;
 
 create table cliente(
-	cpf char(15) not null primary key,
+    cpf char(15) not null primary key,
     nome varchar(50) not null,
     sobrenome varchar(50) not null,
     nascimento date not null,
@@ -14,7 +14,7 @@ create table cliente(
 );
 
 create table pedido (
-	id int not null primary key auto_increment,
+    id int not null primary key auto_increment,
     dataPedido date not null,
     hora time not null, 
     valorTotal double not null,
@@ -30,7 +30,7 @@ create table pedido (
 );
 
 create table pizza (
-	id int not null primary key auto_increment,
+    id int not null primary key auto_increment,
     tamanho int not null,
     sabor01 varchar(50),
     sabor02 varchar(50),
@@ -39,7 +39,7 @@ create table pizza (
 );
 
 create table endereco (
-	cep char(15) not null primary key,
+    cep char(15) not null primary key,
     rua varchar(50) not null,
     numero int not null,
     complemento varchar(50) not null,
@@ -49,10 +49,10 @@ create table endereco (
 );
 
 create table produto (
-	id int not null primary key auto_increment,
+    id int not null primary key auto_increment,
     nome varchar(50) not null,
     tipo varchar(50) not null,
-	quantidade int not null
+    quantidade int not null
 );
 
 ```
