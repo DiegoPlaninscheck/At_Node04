@@ -29,7 +29,7 @@ export const cadastrarCliente = async ({
     complemento,
     bairro,
     cidade,
-    estado
+    estado,
   ]);
 
   novaConexao.query("insert into cliente values (?, ?, ?, ?, ?)", [
@@ -37,7 +37,7 @@ export const cadastrarCliente = async ({
     nome,
     sobrenome,
     nascimento,
-    cep
+    cep,
   ]);
 };
 
@@ -45,7 +45,7 @@ export const cadastrarProduto = async ({ nome, tipo, quantidade }) => {
   novaConexao.query("insert into produto values (null, ?, ?, ?)", [
     nome,
     tipo,
-    quantidade
+    quantidade,
   ]);
 };
 
@@ -61,7 +61,7 @@ export const cadastrarPizza = async ({
     sabor01,
     sabor02,
     sabor03,
-    sabor04
+    sabor04,
   ]);
 };
 
@@ -74,19 +74,27 @@ export const cadastrarPedido = async ({
   id_produto,
 }) => {
   novaConexao.query("insert into pizza values (null, ?, ?, ?, ?, ?, ?)", [
-    dataHora,
+    dataHora + ":00",
     retiradaEntrega,
     valorTotal,
     cpf_cliente,
     id_pizza,
-    id_produto
+    id_produto,
   ]);
 };
 
 export const mostrarProdutos = () => {
-  novaConexao.query("select * from produto");
+  return novaConexao.query("select * from produto");
+};
+
+export const mostrarPizzas = () => {
+  return novaConexao.query("select * from pizza");
+};
+
+export const mostrarClientes = () => {
+  return novaConexao.query("select * from cliente");
 };
 
 export const mostrarPedido = () => {
-  novaConexao.query("select * from pedido");
+  return novaConexao.query("select * from pedido");
 };

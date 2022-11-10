@@ -41,6 +41,21 @@ app.get("/mostrar_produto", (req, res) => {
   res.sendFile(__dirname + "public/mostrar_produto.html");
 });
 
+app.get("/api/produtos", async (req, res) => {
+  const produtos = await db.mostrarProdutos();
+  res.json(produtos);
+});
+
+app.get("/api/pizzas", async (req, res) => {
+  const pizzas = await db.mostrarPizzas();
+  res.json(pizzas);
+});
+
+app.get("/api/clientes", async (req, res) => {
+  const clientes = await db.mostrarClientes();
+  res.json(clientes);
+});
+
 app.post("/cadastrar_cliente", async (req, res) => {
   await db.cadastrarCliente(req.body);
   res.redirect("/cadastrar_cliente");
