@@ -73,10 +73,10 @@ export const cadastrarPedido = async ({
   id_pizza,
   id_produto,
 }) => {
-  novaConexao.query("insert into pizza values (null, ?, ?, ?, ?, ?, ?)", [
+  novaConexao.query("insert into pedido values (null, ?, ?, ?, ?, ?, ?)", [
     dataHora + ":00",
-    retiradaEntrega,
     valorTotal,
+    retiradaEntrega,
     cpf_cliente,
     id_pizza,
     id_produto,
@@ -96,5 +96,7 @@ export const mostrarClientes = () => {
 };
 
 export const mostrarPedido = () => {
-  return novaConexao.query("select * from pedido");
+  return novaConexao.query(
+    "select dataHora, valorTotal, retiradaEntrega, cpf_cliente, id_pizza, id_produto, sabor01, sabor02, sabor03, sabor04, nome as produto, tamanho from pedido join pizza on pedido.id_pizza = pizza.id join produto on pedido.id_produto = produto.id;"
+  );
 };

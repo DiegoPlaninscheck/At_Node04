@@ -51,6 +51,11 @@ app.get("/api/pizzas", async (req, res) => {
   res.json(pizzas);
 });
 
+app.get("/api/pedidos", async (req, res) => {
+  const pedidos = await db.mostrarPedido();
+  res.json(pedidos);
+});
+
 app.get("/api/clientes", async (req, res) => {
   const clientes = await db.mostrarClientes();
   res.json(clientes);
