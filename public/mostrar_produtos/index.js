@@ -19,11 +19,14 @@ async function criarProdutos() {
     spanNome.innerText = `Nome: ${produto.nome}`;
     const spanQuantidade = document.createElement("span");
     spanQuantidade.innerText = `Quantidade: ${produto.quantidade}`;
+    const imgEdicao = document.createElement("img");
+    imgEdicao.src = "../assets/pencil.png";
 
     containerGeral.appendChild(div);
     div.appendChild(spanTipo);
     div.appendChild(spanNome);
     div.appendChild(spanQuantidade);
+    div.appendChild(imgEdicao);
   }
 }
 
