@@ -27,7 +27,7 @@ h1 {
   flex-direction: column;
 }
 
-#info {
+.info {
   width: 90%;
   max-width: 90%;
   height: 10%;
