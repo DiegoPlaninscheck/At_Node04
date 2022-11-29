@@ -100,3 +100,7 @@ export const mostrarPedido = () => {
     "select dataHora, valorTotal, retiradaEntrega, cpf_cliente, id_pizza, id_produto, sabor01, sabor02, sabor03, sabor04, nome as produto, tamanho from pedido join pizza on pedido.id_pizza = pizza.id join produto on pedido.id_produto = produto.id;"
   );
 };
+
+export const deletarProduto = (id) => {
+  return novaConexao.query("delete from produto where id = ?", [id]);
+};

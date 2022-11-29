@@ -81,6 +81,11 @@ app.post("/cadastrar_pedido", async (req, res) => {
   res.redirect("/cadastrar_pedido");
 });
 
+app.delete("/api/produto/:id", async (req, res) => {
+  await db.deletarProduto(req.params.id);
+  res.json(`Produto ${req.params.id} deleteado com sucesso!`);
+});
+
 app.listen(port, () =>
   console.log(`Server started on port http://localhost:${port}`)
 );

@@ -14,42 +14,34 @@ async function criarProdutos() {
     div.classList.add("info");
     div.id = produto.id;
 
-    const spanTipo = document.createElement("span");
-    spanTipo.innerText = `Tipo: ${produto.tipo}`;
-    const spanNome = document.createElement("span");
-    spanNome.innerText = `Nome: ${produto.nome}`;
-    const spanQuantidade = document.createElement("span");
-    spanQuantidade.innerText = `Quantidade: ${produto.quantidade}`;
-    const edicao = document.createElement("span");
-    edicao.innerText = "Editar";
-    edicao.style.cursor = "pointer";
-    // edicao.onclick = editar(produto.id);
+    div.innerHTML = `
+      <input id="tipo" value="${produto.tipo}" />
+      <input id="nome" value="${produto.nome}" />
+      <input id="qtd" value="${produto.quantidade}" />
+      <span id="botao" onclick="editar(${produto.id})">Editar</span>
+      <span id="botao" onclick="excluir(${produto.id})">Excluir</span>
+    `;
 
-    const exclusao = document.createElement("span");
-    exclusao.innerText = "Excluir";
-    exclusao.style.cursor = "pointer";
-    exclusao.addEventListener("toggle", excluir(produto.id));
-
-    div.appendChild(spanTipo);
-    div.appendChild(spanNome);
-    div.appendChild(spanQuantidade);
-    div.appendChild(edicao);
-    div.appendChild(exclusao);
     containerGeral.appendChild(div);
   }
 }
 
-const editar = (id) => {
+const editar = async (id) => {
+  const tipo = document.getElementById("tipo");
+  const nome = document.getElementById("nome");
+  const qtd = document.getElementById("qtd");
+  console.log(tipo.value);
+  console.log(nome.value);
+  console.log(qtd.value);
   console.log(id);
-  // const div = document.getElementById("")
-
-  // if(){
-
-  // }
 };
 
-const excluir = (id) => {
-  console.log(id);
+const excluir = async (id) => {
+  const response = await fetch(`/api/produto/${id}`, { method: "delete" });
+  console.log(response);
+  if (response.status === 200) {
+    window.location.reload();
+  }
 };
 
 criarProdutos();
