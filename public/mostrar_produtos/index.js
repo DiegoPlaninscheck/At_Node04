@@ -27,13 +27,20 @@ async function criarProdutos() {
 }
 
 const editar = async (id) => {
-  const tipo = document.getElementById("tipo");
-  const nome = document.getElementById("nome");
-  const qtd = document.getElementById("qtd");
-  console.log(tipo.value);
-  console.log(nome.value);
-  console.log(qtd.value);
-  console.log(id);
+  let divs = document.querySelectorAll(".info");
+  for (const div of divs) {
+    if (div.id == id) {
+      const tipos = document.querySelectorAll(".info #tipo");
+      for (let i = 0; i < tipos.length; i++) {
+        console.log(tipos.length);
+        if (tipos[i] == tipos.length - 1) {
+          console.log("entrou");
+        }
+      }
+      const nome = document.getElementById("nome");
+      const qtd = document.getElementById("qtd");
+    }
+  }
 };
 
 const excluir = async (id) => {
