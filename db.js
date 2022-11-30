@@ -101,6 +101,13 @@ export const mostrarPedido = () => {
   );
 };
 
+export const atualizarProduto = (id, { tipo, nome, quantidade }) => {
+  return novaConexao.query(
+    "update produto set tipo = ?, nome = ?, quantidade = ? where id = ?",
+    [tipo, nome, quantidade, id]
+  );
+};
+
 export const deletarProduto = (id) => {
   return novaConexao.query("delete from produto where id = ?", [id]);
 };

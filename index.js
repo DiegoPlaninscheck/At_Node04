@@ -81,9 +81,14 @@ app.post("/cadastrar_pedido", async (req, res) => {
   res.redirect("/cadastrar_pedido");
 });
 
+app.put("/api/produto/:id", async (req, res) => {
+  await db.atualizarProduto(req.params.id, req.body);
+  res.json(`Produto ${req.params.id} atualizado com sucesso!`);
+});
+
 app.delete("/api/produto/:id", async (req, res) => {
   await db.deletarProduto(req.params.id);
-  res.json(`Produto ${req.params.id} deleteado com sucesso!`);
+  res.json(`Produto ${req.params.id} deletado com sucesso!`);
 });
 
 app.listen(port, () =>
